@@ -1,38 +1,232 @@
-.App {
+/* .App {
+  padding: 20px;
+} */
+
+.banner {
+  background-color: #f0f0f0;
+  padding: 20px;
   text-align: center;
+  margin-bottom: 20px;
+  background-image: url('./assets/images/black-friday-elements-assortment.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+}
+.banner .content{
+ position: absolute;
+  transform: translate(-50%,-50%);
+  top: 30%;
+  left: 50%;
+  text-transform: uppercase;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filters {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.container{
+  position: relative;
+  z-index: 100;
+}
+.container .card{
+  position: relative;
+  width: 300px;
+  height: 520px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 30px;
+}
+.content-1{
+  position: relative;
+  width:100%;
+  height: 68%;
+  background-image: linear-gradient(to bottom right,#fd8f22,#feb11f,#ffc519);
+}
+.content-1::after{
+  content: 'Nike';
+  position: absolute;
+  left: -24%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(250,208, 93,0.493);
+}
+.content-1 .logo-img img{
+  width: 30px;
+  height: 15px;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+}
+.content-1 img{
+  width: 300px;
+  height: 273px;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+.content-2{
+  position: relative;
+  height: 52%;
+  padding-top: 18px;
+}
+
+.branding,
+.ratings,
+.size,
+.color{
+  padding-left: 20px;
+}
+.branding span:nth-child(1){
+  font-size: 20px;
+  font-weight: 500; 
+}
+.branding span:nth-child(2){
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0px 5px;
+}
+.branding span:nth-child(3){
+  position: absolute;
+  right: 4%;
+  top: 4%;
+  font-size: 10px;
+  background: #fb5c36;
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px 10px 2px;
+}
+.branding h4{
+  font-size: 15px;
+  font-weight: 500;
+}
+.ratings span{
+  display: inline-block;
+  text-align: center;
+  line-height: 26px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #949493;
+}
+.ratings span:hover{
+  color: #0a0d0f;
+}
+.size,
+.color{
+  font-size: 12px;
+}
+.size span{
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 28px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  margin: 2px 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.size span:hover{
+  background: #ffc400;
+}
+
+.color span{
+  display: inline-block;
+  width:20px;
+  height: 20px;
+  text-align: center;
+  line-height: 26px;
+  font-size:10px;
+  margin: 10px 15px 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.color span:nth-child(2){
+  background: #0945a1;
+}
+.color span:nth-child(3){
+  background: #eb4835;
+}
+.color span:nth-child(4){
+  background: #a6ff00;
+}
+.color span:hover:nth-child(2):after{
+  content: '';
+  display: inline-block;
+  border: 1px solid #0945a1;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin-left: -4.1px;
+  margin-top: -3.9px;
+}
+.color span:hover:nth-child(3):after{
+  content: '';
+  display: inline-block;
+  border: 1px solid #eb4835;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin-left: -4.1px;
+  margin-top: -3.9px;
+}
+
+.color span:hover:nth-child(4):after{
+  content: '';
+  display: inline-block;
+  border: 1px solid #a6ff00;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin-left: -4.0px;
+  margin-top: -3.9px;
+}
+
+.price{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 5px;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.price span{
+  background-image: linear-gradient(to right, #0ab5cf,#17d1ee);
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 400;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.price span:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+.price span:active{
+  transform: translateY(1px);
+  box-shadow: 0px 5px 10px rgba(0,0,0,.2);
+}
+input {
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #fff;
 }
